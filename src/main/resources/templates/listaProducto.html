@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+
+        
+    </head>
+    <body>
+        <div class="container" align="center">
+    <h1>Lista de Productos</h1>
+    <button onclick="nuevoProducto();"  type="button" class="btn btn-primary">
+     Nuevo
+    </button>
+    <br/><br/>
+    <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${listProducts}">
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.nombre}"></td>
+                <td th:text="${product.marca}"></td>
+                <td th:text="${product.descripcion}"></td>
+                <td th:text="${product.precio}"></td>
+                <td>
+                    <button   th:onclick="'editarProducto(\'' + ${product.id} + '\');'" class="btn btn-success btn-sm">Editar</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button th:onclick="'eliminarProducto(\'' + ${product.id} + '\');'" class="btn btn-danger btn-sm">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>  
+ 
+  
+    </body>
+    
+</html>
+

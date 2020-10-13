@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create New Product</title>
+
+</head>
+<body>
+    <div align="center">
+        <h1>Crear Nuevo Producto</h1>
+        <br />
+        <form action="#" th:action="@{/save}" id="form_prod" th:object="${product}">
+ 
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>Nombre:</td>
+                    <td><input class="form-control" type="text" th:field="*{nombre}" required /></td>
+                </tr>
+                <tr>
+                    <td>Marca:</td>
+                    <td><input class="form-control" type="text" th:field="*{marca}" /></td>
+                </tr>
+                <tr>
+                    <td>Descripcion:</td>
+                    <td><input class="form-control" type="text" th:field="*{descripcion}" /></td>
+                </tr>
+                <tr>
+                    <td>Precio</td>
+                    <td><input class="form-control" type="text" th:field="*{precio}" /></td>
+                </tr>                            
+                <tr>
+                    <td colspan="2"><button type="button" onclick="guardarP();" class="btn btn-success">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
